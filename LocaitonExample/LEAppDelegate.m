@@ -8,13 +8,18 @@
 
 #import "LEAppDelegate.h"
 
+#import "LEViewController.h"
+
 @implementation LEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    return YES;
-}
+    self.viewController = [[LEViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    return YES;}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

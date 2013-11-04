@@ -19,9 +19,11 @@
     [super viewDidLoad];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
+//WithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super init];
+//    WithNibName:nibNameOrNil bundle:nibBundleOrNil
     if (self) {
             NSLog(@"----1111111--------");
         
