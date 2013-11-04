@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import "LEAppDelegate.h"
+#import "LEViewController.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+        [[LEViewController alloc] init];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([LEAppDelegate class]));
     }
 }

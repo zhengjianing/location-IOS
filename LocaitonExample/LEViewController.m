@@ -17,13 +17,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self = [super init];
+    if (self) {
+            NSLog(@"----1111111--------");
+        
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+        
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [locationManager startUpdatingLocation];
+    }
+    return self;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"------------");
+    NSLog(@"%@", newLocation);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+        NSLog(@"----------===========--");
+    NSLog(@"Could not find location: %@", error);
 }
 
 @end

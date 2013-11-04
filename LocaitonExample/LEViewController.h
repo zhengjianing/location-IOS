@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreLocation/CoreLocation.h"
 
-@interface LEViewController : UIViewController
+@interface LEViewController : UIViewController <CLLocationManagerDelegate>
+
+{
+    CLLocationManager *locationManager;
+}
 
 @end
